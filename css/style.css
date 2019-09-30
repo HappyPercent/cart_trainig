@@ -1,0 +1,505 @@
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('../fonts/SegoeUI-Light.eot');
+	src: local('Segoe UI Light'), local('SegoeUI-Light'),
+		url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SegoeUI-Light.woff') format('woff'),
+		url('../fonts/SegoeUI-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('../fonts/SegoeUI-BoldItalic.eot');
+	src: local('Segoe UI Bold Italic'), local('SegoeUI-BoldItalic'),
+		url('../fonts/SegoeUI-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SegoeUI-BoldItalic.woff') format('woff'),
+		url('../fonts/SegoeUI-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('../fonts/SegoeUI-SemiBold.eot');
+	src: local('Segoe UI Semibold'), local('SegoeUI-SemiBold'),
+		url('../fonts/SegoeUI-SemiBold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SegoeUI-SemiBold.woff') format('woff'),
+		url('../fonts/SegoeUI-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('../fonts/SegoeUI.eot');
+	src: local('Segoe UI'), local('SegoeUI'),
+		url('../fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SegoeUI.woff') format('woff'),
+		url('../fonts/SegoeUI.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('../fonts/SegoeUI-Bold.eot');
+	src: local('Segoe UI Bold'), local('SegoeUI-Bold'),
+		url('../fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SegoeUI-Bold.woff') format('woff'),
+		url('../fonts/SegoeUI-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('../fonts/SegoeUI-Italic.eot');
+	src: local('Segoe UI Italic'), local('SegoeUI-Italic'),
+		url('../fonts/SegoeUI-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SegoeUI-Italic.woff') format('woff'),
+		url('../fonts/SegoeUI-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+html {
+	font-family: 'Segoe UI', sans-serif;
+}
+
+button {
+	font: inherit;
+}
+
+.container {
+	max-width: 1171px;
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.header {
+	/* padding-top: 21px;
+	padding-bottom: 25px; */
+	height: 67px;
+	border-bottom: 1px solid #e6e8f2;
+}
+
+.header .container {
+	height: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	position: relative;
+}
+
+.menu {
+	width: 49.8%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.menu ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.menu__item {
+	color: #0f1a4d;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 22px;
+	position: relative;
+	cursor: pointer;
+}
+
+.menu__item::after {
+	content: '';
+	width: 0%;
+	height: 4px;
+	background-color: #f7ba7c;
+	position: absolute;
+	top:44px;
+	left: 0;
+	transition: width .5s ease;
+	-moz-transition: width .5s ease;
+	-moz-transition: width .5s ease;
+}
+
+.menu__item:hover::after{
+	width: 100%;
+}
+
+/* .my-cart {
+	float: right;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.my-cart__label {
+	position: relative;
+	display: inline-block;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	cursor: pointer;
+} */
+
+.my-cart__wrapper {
+	position: relative;
+	z-index: 3;
+	pointer-events: none;
+}
+
+.my-cart__wrapper--active {
+	pointer-events: auto;
+}
+
+
+.my-cart__button {
+	background-image: url('../img/shopping-icon.png');
+	background-repeat: no-repeat;
+	background-position: 15% center;
+	background-color: transparent;
+	cursor: pointer;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	padding-left: 45px;
+	position: relative;
+	width: 204px;
+	color: #0f1a4d;
+	height: 100%;
+}
+
+.my-cart__icon {
+	cursor: pointer;
+	font-family: "Segoe UI";
+	border-radius: 19px;
+	height: 19px;
+	min-width: 19px;
+	padding: 0 4px;
+	font-size: 13px;
+	color: #fff;
+	background-color: #00a7cc;
+	display: inline-block;
+	position: absolute;
+	left: 40px;
+	bottom: 17px;
+	text-align: center;
+}
+
+.current-selection {
+	display: none;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: 66px;
+	max-width: 570px;
+	width: 557px;
+}
+
+.current-selection::after {
+	content: '';
+	position: fixed;
+	top: 66px;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	opacity: 0.5;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.my-cart__wrapper--active:hover>.current-selection {
+	display: flex;
+}
+
+.my-cart__wrapper--active:hover>.my-cart__button {
+	background-color: #f2f7fa;
+}
+
+.cart-wrapper {
+	width: 100%;
+	max-height: 342px;
+	overflow: auto;
+}
+
+.cart-wrapper::-webkit-scrollbar {
+	display: block;
+	position: absolute;
+	overflow: auto;
+	width: 8px;
+	background-color: #dbe0e8;
+	opacity: 0.25;
+	/* border-radius: 4px; */
+}
+
+.cart-wrapper::-webkit-scrollbar-thumb {
+	background-color: #b9becd;
+	opacity: 0.5;
+	width: 8px;
+	border-radius: 4px;
+}
+
+.current-selection__card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f2f7fa;
+	padding: 29px 34px;
+	width: 100%;
+	border: 1px solid #f2f7fa;
+}
+
+.current-selection__img {
+	height: 54px;
+	margin-right: 37px;
+}
+
+.current-selection__text {
+	flex-basis: 41%;
+	margin-top: -25px;
+}
+
+.current-selection__category {
+	color: #8d91a6;
+	font-family: "Segoe UI";
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 30px;
+}
+
+.current-selection__name {
+	width: 100%;
+	color: #0f1a4d;
+	font-family: "Segoe UI";
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 16px;
+}
+
+.current-selection__price {
+	color: #0f1a4c;
+	font-family: "Segoe UI";
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.current-selection__trash {
+	border: none;
+	width: 21px;
+	height: 20px;
+	background-image: url('../img/trash.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+	border-radius: 5px;
+	transition: transform 0.3s ease;
+}
+
+.current-selection__trash:hover {
+	transform: scale(1.1);
+	transition: transform 0.3s ease;
+	background-blend-mode: multiply;
+	background-color: rgba(255, 72, 0, 0.5);
+}
+
+.cart-total {
+	width: 100%;
+	height: 108px;
+	background-color: #f2f7fa;
+	border-top: 1px solid #e6e8f2;
+	padding: 30px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	z-index: 5;
+}
+
+.cart-total__order-now {
+	width: 285px;
+	height: 48px;
+	background-color: #00a7cc;
+	border-radius: 48px;
+	line-height: 22px;
+	color: white;
+	text-align: left;
+	padding-bottom: 5px;
+	padding-left: 25px;
+	display: inline-block;
+	margin-right: 40px;
+	background-image: url('../img/next.svg');
+	background-repeat: no-repeat;
+	background-position: 95% center;
+}
+
+.cart-total__number {
+	color: #8d91a6;
+	font-size: 13px;
+	font-weight: 300;
+	background-image: url('/img/cart-number.svg');
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 20px;
+}
+
+.cart-total__sum {
+	color: #00a7cc;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.product-cards {
+	padding-top: 72px;
+}
+
+.card {
+	border: 1px solid #f3f4f9;
+	padding: 5px;
+	border-radius: 6px;
+	position: relative;
+	margin-bottom: 30px;
+	transition: .5s ease-in-out;
+	margin-right: 30px;
+}
+
+.card:nth-child(4n) {
+	margin-right: 0px;
+}
+
+.card:hover {
+	transform: translateY(-10px);
+}	
+
+.hit::before {
+	content: "Хит продаж";
+	padding: 0 12px;
+	border-radius: 5px;
+	background-color: #f7ba7c;
+	position: absolute;
+	top: 11px;
+	left: 13px;
+	color: white;
+	font-family: "Segoe UI";
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 25px;
+}
+
+.absent::before {
+	content: "Нет в наличии";
+	padding: 0 5px;
+	height: 25px;
+	border-radius: 5px;
+	background-color: #a2a2a2;
+	position: absolute;
+	top: 11px;
+	left: 15px;
+	color: white;
+	font-family: "Segoe UI";
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 25px;
+}
+
+.card__category {
+	display: block;
+	color: #8d91a6;
+	font-family: "Segoe UI";
+	font-size: 13px;
+	font-weight: 400;
+	margin-top: 11px;
+	margin-left: 14px;
+}
+
+.card__name {
+	margin-left: 14px;
+	margin-top: 5px;
+	height: 62px;
+	width: 70%;
+	color: #0f1a4d;
+	font-family: "Segoe UI";
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.card__price-section {
+	display: flex;
+	flex-wrap: wrap;
+	width: 88.9%;
+	border-top: 1px solid #e6e8f2;
+	margin: 0 auto;
+	height: 85px;
+	padding-bottom: 10px;
+	position: relative;
+}
+
+.card__sale {
+	color: #ff001e;
+	margin-top: 18px;
+	padding-left: 18px;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: line-through;
+	background-image: url('../img/sale-icon.png');
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+	width: 75%;
+	display: inline-block;
+	position: absolute;
+}
+
+.card__price {
+	color: #00a7cc;
+	font-size: 30px;
+	font-weight: 700;
+	width: 75%;
+	display: inline-block;
+	align-self: flex-end;
+}
+
+.cart__icon {
+	cursor: pointer;
+	width: 49px;
+	height: 49px;
+	border-radius: 49px;
+	background-image: url('../img/cart-icon.png');
+	background-repeat: no-repeat;
+	float: right;
+	position: relative;
+	top: 20px;
+	left: 9px;
+}
+
+.cart__icon--active::after {
+ 	content: url('../img/checkmark.png');
+	position: absolute;
+	bottom: -9px;
+	right: -3px;
+}
