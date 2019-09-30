@@ -189,6 +189,12 @@ button {
 	width: 204px;
 	color: #0f1a4d;
 	height: 100%;
+	transition: 0.3s ease-in-out;
+	outline: none;
+}
+
+.cart__button, .cart__button:active, .cart__button:focus {
+	outline: none;
 }
 
 .my-cart__icon {
@@ -209,7 +215,9 @@ button {
 }
 
 .current-selection {
-	display: none;
+	display: flex;
+	visibility: hidden;
+	opacity: 0;
 	flex-wrap: wrap;
 	justify-content: center;
 	position: absolute;
@@ -217,6 +225,8 @@ button {
 	top: 66px;
 	max-width: 570px;
 	width: 557px;
+	height: 0px;
+	transition: 0.3s ease-in-out;
 }
 
 .current-selection::after {
@@ -227,17 +237,26 @@ button {
 	width: 100vw;
 	height: 100vh;
 	background-color: black;
-	opacity: 0.5;
+	opacity: 0;
 	pointer-events: none;
 	z-index: -1;
+	transition: 0.3s ease-in-out;
 }
 
 .my-cart__wrapper--active:hover>.current-selection {
-	display: flex;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.my-cart__wrapper--active:hover>.current-selection::after {
+	opacity: 0.5;
+	transition: 0.3s ease-in-out;
 }
 
 .my-cart__wrapper--active:hover>.my-cart__button {
 	background-color: #f2f7fa;
+	transition: 0.3s ease-in-out;
 }
 
 .cart-wrapper {
@@ -495,6 +514,7 @@ button {
 	position: relative;
 	top: 20px;
 	left: 9px;
+	outline: none;
 }
 
 .cart__icon--active::after {

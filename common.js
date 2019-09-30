@@ -1,15 +1,11 @@
 $(document).ready(function(){
-    
-    console.log(localStorage);
-
+    // localStorage.clear();
     if(localStorage.length !== 0) {
         $('.cart-wrapper').append(localStorage['cart-wrapper']);
-        $('.cart__icon').each(function() {
-            var currenLabel = $(this).attr('data-label');
-            if(localStorage.getItem('cart__icon--active-label-'+ currenLabel) !== null) {
-                $(this).addClass('cart__icon--active');
-                console.log($(this));
-            }
+        $('.current-selection__card').each(function() {
+            var label = $(this).attr('data-label');
+
+            $('.cart__icon[data-label=' + label + ']').addClass('cart__icon--active');
         });
     }
 
@@ -30,19 +26,22 @@ $(document).ready(function(){
             $('.cart-wrapper').append(newCard);
             $(this).addClass('cart__icon--active');
             calculateCart();
-            storageUpdate(label, null);
+            storageUpdate();
         }
     });
     
     $('html').on('click', '.current-selection__trash', function () {
         var label = $(this).parent().attr('data-label');
+        var thisCard = $(this).parent();
 
-        $(this).parent().remove();
-        calculateCart();
+        thisCard.animate({
+            height: 0
+        }, thisCard.remove());
+
         $('button[data-label = ' + label + ']').removeClass('cart__icon--active');
 
-
-        storageUpdate(null, label);
+        calculateCart();
+        storageUpdate(); 
     });
 
     function calculateCart() {
@@ -69,13 +68,8 @@ $(document).ready(function(){
         }
     }
 
-    function storageUpdate(labelForAdd, labelForDelete) { 
+    function storageUpdate() { 
         localStorage.setItem('cart-wrapper', $('.cart-wrapper').html());
-        if(labelForAdd !== null) {
-            localStorage.setItem('cart__icon--active-label-' + labelForAdd, labelForAdd);
-        } else if (labelForDelete !== null) {
-            localStorage.removeItem('cart__icon--active-label-' + labelForDelete);
-        }
     }
 
     function declOfNum(number, titles) {  
